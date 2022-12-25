@@ -20,7 +20,7 @@ return (dst);
 int	main(void)
 {
 	char dst[100] = "Biken";
-	char src[] = "Urcelay"; 
+	char src[] = "Urc"; 
 
 	char *p_dst;
 	char *p_src;
