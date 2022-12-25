@@ -25,7 +25,7 @@ return (dst);
 
 int	main(void)
 {
-	char dst[16] = "Biken";
+	char dst[11] = "Biken";
 	char src[] = "Urcelay";
 
 	/* char *p_dst;
@@ -33,11 +33,16 @@ int	main(void)
 	
 	p_dst = dst;
 	p_src = src; */
-	printf("%s\n", ft_strncat(dst, src, 5));
+	/* printf("%s\n", ft_strncat(dst, src, 5)); */
 	printf("%s\n", strncat(dst, src, 5));
 	return (0);
 }
-// Con menos de 16 no hay espacio para strncat y da error de buffer, 
+
+// return the pointer s1.
+// Si buffer dst < dst + n + 1 no hay espacio para strncat y da error de buffer, 
 // overflow, trace trap... 
 
 // No se como replicar eso en el ft_strncat.
+
+// The string s1 must have sufficient space to hold the result.
+// appends not more than n characters from s2, and then adds a terminating ‘\0’.

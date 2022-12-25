@@ -17,20 +17,27 @@ size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 	}
 	if	(i != '\0')
 		dst[i + j] = '\0';
-	printf("%s\n", dst);
 	return (i + strlen(src));
 }
 
 int	main(void)
 {
-	char dst[30] = "Biken";
-	char src[] = "Urcelay";
+	char dst[9] = "Biken";
+	char src[] = "Urce";
+	/* printf("%zu\n", ft_strlcat(dst, src, 9)); */
+	printf("%zu\n", strlcat(dst, src, 9));
 	printf("%s\n", dst);
-	printf("%zu\n", ft_strlcat(dst, src, 8));
-	printf("%zu\n", strlcat(dst, src, 8)); 
+	printf("%zu\n", strlen(dst));
 	return (0);
 }
 
+// Returns the initial length of dst plus the length of src.
+
+// It will append at most
+// dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
+// dstsize is 0 or the original dst string was longer than dstsize.
+
 // Lo correcto es que devuelva el string que está intentando crear 12,
 // que sería dst + src en total. 
-// el strlcat da 14 porque parte del nuevo dst creado tras el ft_strlcat. 
+
+// No se recrear el error de buffer cuand dst < dstsize.
