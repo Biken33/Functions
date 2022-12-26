@@ -3,8 +3,14 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i; 
+	size_t i; 
+	size_t src_size;
 
+	src_size = 0;
+	while (src[src_size])
+	{
+		src_size++;
+	}
 	i = 0;
 	while (src[i] && i < dstsize - 1)
 	{
@@ -12,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[i] = '\0';
-	return (strlen(src));
+	return (src_size);
 } 
 
 
@@ -21,8 +27,8 @@ int	main(void)
 	char dst[100] = "Biken";
 	char src[] = "Urcelay";
 
-	printf("%zu\n", ft_strlcpy(dst, src, 10));
-	//printf("%zu\n", strlcpy(dst, src, 10));
+	//printf("%zu\n", ft_strlcpy(dst, src, 10));
+	printf("%zu\n", strlcpy(dst, src, 10));
 	printf("%s\n", dst);
 	return (0);
 }

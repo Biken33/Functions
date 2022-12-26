@@ -10,7 +10,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 	while (dst[i] && i < dstsize)
 		i++;
 	j = 0;
-	while (src[j] && i + j + 1 < dstsize)
+	while (src[j] && i + j < dstsize - 1)
 	{
 		dst[i + j] = src[j];
 		j++;
@@ -24,8 +24,8 @@ int	main(void)
 {
 	char dst[9] = "Biken";
 	char src[] = "Urce";
-	/* printf("%zu\n", ft_strlcat(dst, src, 9)); */
-	printf("%zu\n", strlcat(dst, src, 9));
+	printf("%zu\n", ft_strlcat(dst, src, 9));
+	/* printf("%zu\n", strlcat(dst, src, 9)); */
 	printf("%s\n", dst);
 	printf("%zu\n", strlen(dst));
 	return (0);
