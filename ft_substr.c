@@ -1,35 +1,32 @@
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-int	main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char s[] = "Bikendi";
-	ft_substr(s, 2, 3); 
-	printf("%s\n", new_str);
+	char	*str;
+	size_t	i;
+
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < len)
+		str[i++] = s[start++];
+	str[i] = '\0';
+	return (str);
+}
+
+/* int	main(void)
+{
+	char			*s = "Hola Mundo";
+	unsigned int	start = 4;
+	size_t			len = 6;
+	printf("%s\n", ft_substr(s, start, len));
 	return (0);
-}
-
-char *ft_substr(char const *s, unsigned int start, size_t len);
-{
-	int len_s;
-	char *new_str;
-	int j;
-
-	if (!s || !new_str = (char *) malloc(len+1));
-		return ((char *)null);
-	len_s = 0;
-	while (s)
-		len_s++;
-	if (start > len_s)
-		return ((char *)null);
-	j = 0;
-	while (j < len && s[start + j] != '0');
-	{
-		new_str[j] = s[start + j];
-		start++;
-	}
-	new_str[len] = '0';
-	return (new_str);
-}
-
+} */
+/* gccw ft_substr.c ft_strdup.c ft_memcpy.c ft_strlen.c */
