@@ -1,33 +1,35 @@
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (dst == NULL)
-			return (NULL);
+	char		*dst;
+	const char	*str;
+	size_t		i;
 
-	char *char_dst = (char *) dst;
-	char *char_src = (char *) src;
-	int i;
-
+	dst = (char *)dest;
+	str = (const char *)src;
 	i = 0;
+	if (dest == 0 && src == 0)
+		return (0);
 	while (i < n)
 	{
-		char_dst[i] = char_src[i];
+		dst[i] = str[i];
 		i++;
 	}
-
 	return (dst);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char dst[] = "snnnnnnnnnnss";
-	char src[] = "Copy this";
-	
-	ft_memcpy(dst, src, 8);
-
-	printf("s2 is %s\n", src);
-	printf("s1 is %s\n", dst);
-
+	char		dest[] = "aaaaa";
+	const char	src[] = "hhhhhhhazzzz";
+	size_t		n = 20;
+	char		*str = ft_memcpy(dest, src, n);
+	char		*s = memcpy(dest, src, n);
+	printf("%s\n", str);
+	printf("%s\n", s);
+	return (0);
 }
+ */

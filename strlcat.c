@@ -41,3 +41,36 @@ int	main(void)
 // que sería dst + src en total. 
 
 // No se recrear el error de buffer cuand dst < dstsize.
+
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (dst[i] && i < size)
+	i++;
+	while (src[j] && i + j + 1 < size)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i != size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
+}
+
+/* int	main(void)
+{
+	char	*s1 = "Hola Mundo";
+	char	*s3 = "Hola Mundo";
+	char	*s2 = "Cruel";
+	size_t	size = 7;
+	printf("%zu\n", ft_strlcat(s1, s2, size));
+	printf("%zu\n", strlcat(s3, s2, size));
+	return (0);
+} */
+/* gccw ft_strlcat.c ft_strlen.c */

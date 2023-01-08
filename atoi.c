@@ -27,21 +27,12 @@ int	ft_atoi(const char *str)
 	return (sign * numb);
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	int mine;
-	int theirs;
-	
-	if (argc ==2)
-	{
-		mine = ft_atoi(argv[1]);
-		theirs = atoi(argv[1]);
-		printf("mine: %d\ntheirs: %d\n", mine, theirs);
-	}
+	char	*nb1 = "--123";
+	char	*nb2 = "--123";
+	printf("%d\n", ft_atoi(nb1));
+	printf("%d\n", atoi(nb2));
 	return (0);
 }
-
-//Convert ascii string to integer. 
-
-//con ---123 no se porque a mi me da -123 y en el otro 0.
-
+ 

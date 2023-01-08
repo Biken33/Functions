@@ -1,29 +1,25 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t len)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	int i;
+	size_t			i;
+	unsigned char	*s1;
 
+	s1 = (unsigned char *)str;
 	i = 0;
-	while	(str[i] < len)
-	{
-		str[i] = c; 
-	}
-return (str);
+	while (i < n)
+		s1[i++] = (unsigned char)c;
+	return (s1);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char str[100] = "Bikendi";
-	int u;
-
-	printf("%s\n", ft_memset(str, 'u', 10));
-/* 	printf("%zu\n", memset(str, 'u', 10)); */
-	return (0); 
-}
-
-// fill a byte string with a byte value.
-// writes len bytes of value c (converted to an unsigned
-// char) to the string b.
-
+	char		str[] = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+	int			c = 'z';
+	size_t		n = 20;
+	char		*s = ft_memset(str, c, n);
+	char		*s1 = memset(str, c, n);
+	printf("%s\n", s);
+	printf("%s\n", s1);
+	return (0);
+} */
