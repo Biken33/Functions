@@ -16,13 +16,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, i, j + 1));
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char	*str = "hola";
 	char	*set = "oqhl";
 	printf("%s", ft_strtrim(str, set));
-	printf("%s", strtrim(str, set));
+	//printf("%s", strtrim(str, set));
 	return (0);
 }
- */
+
 /* ft_strtrim.c ft_strchr.c ft_strlen.c ft_substr.c ft_strdup.c ft_memcpy.c */
+
+// no entiendo el (j && ...) en el segundo while

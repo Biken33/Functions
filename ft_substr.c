@@ -5,7 +5,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	i;
 
-	if (!s)
+	if (!s) // igual a if (!s != 0)  o if (s == 0)
 		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
@@ -23,10 +23,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /* int	main(void)
 {
-	char			*s = "Hola Mundo";
+	char			*s = "Hola_Mundo";
 	unsigned int	start = 4;
-	size_t			len = 6;
+	size_t			len = 4;
 	printf("%s\n", ft_substr(s, start, len));
 	return (0);
 } */
 /* gccw ft_substr.c ft_strdup.c ft_memcpy.c ft_strlen.c */
+

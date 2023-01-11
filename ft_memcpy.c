@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dst);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char		s1[] = "Destination";
 	const char	s2[] = "Bikendi";
@@ -30,9 +30,7 @@ int	main(void)
 	printf("%s\n", s);
 	printf("%s\n", s1);
 	return (0);
-}
-// porque devuelve dst y no dest ?? según man retorna original value of dest. 
-// what´s the difference beetwen unsigned char *p1, char *p1, const char *p1
+} */
 
 // para copiar src desde el segundo caracter enviar pointer src + 1 (dest, src + 1, n). 
 
@@ -68,3 +66,7 @@ int	main(void)
 
 	return (0);
 } */
+
+// porque devuelve dst y no dest ?? según man retorna original value of dest. 
+// what´s the difference beetwen unsigned char *p1, char *p1, const char *p1
+ 

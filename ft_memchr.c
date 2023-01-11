@@ -6,7 +6,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 
 	i = 0;
-	str = (unsigned char) *s;
+	str = (unsigned char*) s;
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int			c = 'a';
 	const char	*s = "hhhhhhhahhhhh";
@@ -24,7 +24,7 @@ int	main(void)
 	printf("%s\n", ft_memchr(s, c, n));
 	printf("%s\n", memchr(s, c, n));
 	return (0);
-} 
+}  */
 
 /* con -Wall ... no compila por los warning 
 ft_memchr.c:25:17: warning: format specifies type 'char *' but the argument has type 'void *' [-Wformat]
@@ -32,4 +32,6 @@ ft_memchr.c:25:17: warning: format specifies type 'char *' but the argument has 
 con gcc si. 
 Pero no se porque da ese error 
 porque usa unsigned char c para decastear?
+porque devuelve &str[i]? return a pointer to the byte located.
+¿alguna otra función retorna un pointer?
  */

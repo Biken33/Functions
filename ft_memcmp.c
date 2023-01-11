@@ -18,7 +18,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (str1[i] - str2[i]);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	const char	*p1 = "hhhhhhhxhhhhh";
 	const char	*p2 = "hhhhhhhahhhhh";
@@ -26,7 +26,7 @@ int	main(void)
 	printf("%d\n", ft_memcmp(p1, p2, n));
 	printf("%d\n", memcmp(p1, p2, n));
 	return (0);
-}
+} */
 
  /* int ft_memcmp(const void *s1, const void *s2, size_t n)
  {
