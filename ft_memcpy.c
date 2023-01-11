@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dst);
 }
 
-/* int	main(void)
+ /* int	main(void)
 {
 	char		s1[] = "Destination";
 	const char	s2[] = "Bikendi";
@@ -30,9 +30,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	printf("%s\n", s);
 	printf("%s\n", s1);
 	return (0);
-} */
-
-// para copiar src desde el segundo caracter enviar pointer src + 1 (dest, src + 1, n). 
+} para copiar src desde el segundo caracter enviar pointer src + 1 (dest, src + 1, n)
+ */
 
 /* void *ft_memcpy(void *dst, const void *src, size_t n) 
 {

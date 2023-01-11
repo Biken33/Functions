@@ -1,4 +1,4 @@
-#include "libft.h"
+/* #include "libft.h"
 
 static int	ft_wordlen(const char *s, char c)
 {
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (0);
 	return (ft_tab_maker(s, tab, c));
-}
+} */
 
 /* int	main(void)
 {
@@ -86,3 +86,70 @@ char	**ft_split(char const *s, char c)
 	return (0);
 } */
 /* gccw ft_split.c ft_substr.c ft_strdup.c ft_strlen.c ft_memcpy.c */
+
+#include "libft.h"
+#include <stdio.h>
+
+static int  ft_wordquantity(char const *s, char c)
+{
+   int i;
+   int wq;
+
+   i = 0;
+   wq = 0;
+   while (s[i])
+   {
+       while (s[i] == c)
+           i++;
+       if (s[i] != c && s[i])
+           wq++;
+       while (s[i] != c && s[i])
+           i++;
+   }
+   return (wq);
+}
+
+char    **ft_split(char const *s, char c)
+{
+   char    **aux;
+   int     i;
+   int     j;
+   int     start;
+
+   aux = (char **)malloc((ft_wordquantity(s, c) + 1) * sizeof(char *));
+   if (!aux)
+       return (NULL);
+   i = 0;
+   j = 0;
+   while (s[i])
+   {
+       if (s[i] != c)
+       {
+           start = i;
+           while (s[i] && s[i] != c)
+               i++;
+           aux[j] = ft_substr(s, start, i - start);
+           j++;
+           continue ;
+       }
+       i++;
+   }
+   aux[j] = NULL;
+   return (aux);
+}
+
+/*int main(void)
+{
+   char const s[] = " hola mundo";
+   char c = ' ';
+   char **result = ft_split(s, c);
+   int substr = 0;
+
+   while (result[substr])
+   {
+       printf("Substr n.%d: %s\n", substr, result[substr]);
+       substr++;
+   }
+   printf("%s", ft_split(s, c));
+   return (0);
+}*/ 
